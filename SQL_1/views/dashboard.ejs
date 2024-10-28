@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+    .logout { padding: 10px; background-color: #dc3545; color: white; text-decoration: none; display: inline-block; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Welcome, <%= user.password %></h1>
+  <p>This is your dashboard. You are now logged in.</p>
+  <a href="/logout" class="logout">Logout</a>
+</body>
+</html>
