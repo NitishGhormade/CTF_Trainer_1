@@ -1,4 +1,6 @@
 Solution :- 
 1. Decode the Cipher Text by Base64 Decoding.
 2. Apply XOR Decoding by Brute Forcing key from 0 to 255 :- XOR Decoding is done by XORing each character with the Key.
-3. Apply Base64 Decoding to each output of XOR Decoding to get the Final FLag.   
+3. Apply Base64 Decoding to each output of XOR Decoding to get the Final FLag.
+
+Ans :- AARHANT_THM{You_Solved_The_XOR_Challenge}
