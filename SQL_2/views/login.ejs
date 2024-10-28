@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <% if (error) { %>
+    <p class="error">
+      <%= error %>
+    </p>
+    <% } %>
+      <form onsubmit="return validateInput()" method="POST" action="/login">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+      </form>
+
+      <script>
+        function validateInput() {
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+          const sqlInjectionPattern = /(\b(SELECT|UPDATE|DELETE|INSERT|DROP|ALTER|CREATE|TRUNCATE|EXEC|UNION|OR|AND)\b|--|;|'|"|\/\*|\*\/|\\)/i;
+
+          if (sqlInjectionPattern.test(username) || sqlInjectionPattern.test(password)) {
+            alert('Invalid input detected. SQL Injection will not work.');
+            return false;
+          }
+          return true;
+        }
+      </script>
+</body>
+
+</html>
