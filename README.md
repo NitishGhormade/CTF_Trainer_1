@@ -29,11 +29,7 @@ This project includes **three CTF training simulations**, each tailored to teach
 ---
 
 ## 🚀 Getting Started  
-
-### Prerequisites  
-
-- **Python** (v3.8 or higher)  
-- **Docker** (optional, for containerized setup)  
+  
 
 ### Installation  
 
